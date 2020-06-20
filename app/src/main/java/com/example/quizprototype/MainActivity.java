@@ -2,7 +2,9 @@ package com.example.quizprototype;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
     // Joe test
     // Shad test
     //Amberlee test
+    public void start(View view){
+
+        
+
+    }
 }
