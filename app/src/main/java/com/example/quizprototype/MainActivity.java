@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        videoGamesURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=boolean";
+        videoGamesURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple";
     }
 
     // Testing this out
@@ -22,17 +22,25 @@ public class MainActivity extends AppCompatActivity {
     // Shad test
     //Amberlee test
 
-    public void videGames()
+    public void videoGames(View view)
     {
         findViewById(R.id.sportsButton);
         category = videoGamesURL;
     }
 
-    public void start(View view) {
+    public void getAPIData(View view) {
         findViewById(R.id.startButton);
-        StartScreen start = new StartScreen(category);
+        QuizData data = new QuizData(this, category);
 
-        Thread forecastThread = new Thread(start);
-        forecastThread.start();
+        Thread quizThread = new Thread(data);
+        quizThread.start();
     }
+
+//    public void start(View view) {
+//        findViewById(R.id.startButton);
+//        StartScreen start = new StartScreen(category);
+//
+//        Thread forecastThread = new Thread(start);
+//        forecastThread.start();
+//    }
 }
