@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sportsButton"
+        android:id="@+id/videoGames"
         android:layout_width="119dp"
         android:layout_height="78dp"
         android:layout_marginStart="32dp"
@@ -34,14 +34,14 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:onClick="videoGames"
-        android:text="SPORTS"
+        android:onClick="setVideoGamesURL"
+        android:text="VIDEO GAMES"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/filmButton"
         android:layout_width="120dp"
         android:layout_height="77dp"
         android:layout_marginStart="32dp"
@@ -49,13 +49,14 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:text="ENTERTAINMENT"
+        android:onClick="setFilmURL"
+        android:text="FILM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sportsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/videoGames" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/scienceButton"
         android:layout_width="122dp"
         android:layout_height="71dp"
         android:layout_marginStart="32dp"
@@ -63,13 +64,14 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="setScienceURL"
         android:text="SCIENCE/COMPUTERS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/filmButton" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/historyButton"
         android:layout_width="122dp"
         android:layout_height="63dp"
         android:layout_marginStart="32dp"
@@ -77,13 +79,14 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="setHistoryURL"
         android:text="HISTORY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/scienceButton" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/generalButton"
         android:layout_width="119dp"
         android:layout_height="72dp"
         android:layout_marginStart="32dp"
@@ -91,10 +94,11 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="setGeneralURL"
         android:text="GENERAL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/historyButton" />
 
     <ImageButton
         android:id="@+id/startButton"

@@ -11,15 +11,15 @@ import java.util.List;
 
 public class QuizData implements Runnable {
     private WeakReference<Activity> doneReference;
-    private List<Question> results;
     private String category;
+    public Results list;
 
     public QuizData(Activity done, String category) {
         this.doneReference = new WeakReference<Activity>(done);
         this.category = category;
     }
 
-    private Question getHTTP() {
+    private Results getHTTP() {
         String TAG = "send";
         Log.d(TAG, "Getting API data");
 
@@ -27,23 +27,27 @@ public class QuizData implements Runnable {
         String url =
                 http.readHTTP(
                         category);
-        System.out.println(url);
 
         Gson gson = new Gson();
-        Question list = gson.fromJson(url, Question.class);
+        list = gson.fromJson(url, Results.class);
+        return list;
+    }
+
+    public Results getFullList() {
         return list;
     }
 
     public void run() {
-        final Question newList = getHTTP();
+        final Results newList = getHTTP();
 
         final Activity done = doneReference.get();
         if (done != null) {
             done.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println(newList);
-
+                    for(int i = 0; i < 10; i++) {
+                        System.out.println(newList.getResultsQuestion(i) + " " + newList.getResultsCorrect(i) + " " + newList.getResultsIncorrect(i));
+                    }
                 }
             });
         }
