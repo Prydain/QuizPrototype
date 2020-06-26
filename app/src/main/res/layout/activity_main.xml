@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="291dp"
-        android:layout_height="83dp"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
@@ -36,14 +36,15 @@
         android:layout_marginRight="32dp"
         android:onClick="setVideoGamesURL"
         android:text="VIDEO GAMES"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/filmButton"
-        android:layout_width="120dp"
-        android:layout_height="77dp"
+        android:layout_width="119dp"
+        android:layout_height="78dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
@@ -51,14 +52,15 @@
         android:layout_marginRight="32dp"
         android:onClick="setFilmURL"
         android:text="FILM"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoGames" />
 
     <Button
         android:id="@+id/scienceButton"
-        android:layout_width="122dp"
-        android:layout_height="71dp"
+        android:layout_width="119dp"
+        android:layout_height="78dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
@@ -66,14 +68,15 @@
         android:layout_marginRight="32dp"
         android:onClick="setScienceURL"
         android:text="SCIENCE/COMPUTERS"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filmButton" />
 
     <Button
         android:id="@+id/historyButton"
-        android:layout_width="122dp"
-        android:layout_height="63dp"
+        android:layout_width="119dp"
+        android:layout_height="78dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
@@ -81,6 +84,7 @@
         android:layout_marginRight="32dp"
         android:onClick="setHistoryURL"
         android:text="HISTORY"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scienceButton" />
@@ -88,7 +92,7 @@
     <Button
         android:id="@+id/generalButton"
         android:layout_width="119dp"
-        android:layout_height="72dp"
+        android:layout_height="78dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
@@ -96,13 +100,14 @@
         android:layout_marginRight="32dp"
         android:onClick="setGeneralURL"
         android:text="GENERAL"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/historyButton" />
 
     <ImageButton
         android:id="@+id/startButton"
-        android:layout_width="122dp"
+        android:layout_width="119dp"
         android:layout_height="53dp"
         android:layout_marginStart="258dp"
         android:layout_marginLeft="258dp"
