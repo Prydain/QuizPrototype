@@ -51,11 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void getAPIData(View view) {
         findViewById(R.id.startButton);
-        QuizData data = new QuizData(this, category);
 
-        Thread quizThread = new Thread(data);
-        quizThread.start();
-//        Intent intent = new Intent(this, QuestionsScreen.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, QuestionsScreen.class);
+        intent.putExtra("category", category);
+
+        startActivity(intent);
     }
 }
