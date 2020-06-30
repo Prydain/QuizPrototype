@@ -23,17 +23,4 @@ public class QuestionsScreen extends AppCompatActivity {
         quizThread.start();
     }
 
-    protected void onResume() {
-        super.onResume();
-
-        Results list = data.getFullList();
-        System.out.println("Second System.out " + list);
-//        for(int i = 0; i < 10; i++) {
-//            System.out.println(list.getResultsQuestion(i) + " " + list.getResultsCorrect(i) + " " + list.getResultsIncorrect(i));
-//        }
-
-//        for(int i = 0; i < 10; i++) {
-//            System.out.println(fullQuiz.getFullList().getResultsQuestion(i));
-//        }
-    }
 }

@@ -11,15 +11,15 @@ public class Results {
         this.results = results;
     }
 
-    public List<String> getResultsQuestion(int i) {
-        return Collections.singletonList(results.get(i).getQuestion());
+    public String getResultsQuestion(int i) {
+        return results.get(i).getQuestion();
     }
 
-    public List<String> getResultsCorrect(int i) {
-        return Collections.singletonList(results.get(i).getCorrectAnswer());
+    public String getResultsCorrect(int i) {
+        return results.get(i).getCorrectAnswer();
     }
 
-    public List<ArrayList<String>> getResultsIncorrect(int i) {
-        return Collections.singletonList(results.get(i).getIncorrect_answers());
+    public ArrayList<String> getResultsIncorrect(int i) {
+        return results.get(i).getIncorrect_answers();
     }
 }
