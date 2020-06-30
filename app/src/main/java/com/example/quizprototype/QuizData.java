@@ -49,6 +49,7 @@ public class QuizData implements Runnable {
                 @Override
                 public void run() {
 
+                    done.setContentView(R.layout.start);
                     TextView question = (TextView) done.findViewById(R.id.questionText);
                     TextView button1 = done.findViewById(R.id.answerOne);
                     TextView button2 = done.findViewById(R.id.answerTwo);
