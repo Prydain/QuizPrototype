@@ -79,7 +79,7 @@ public class QuestionsScreen extends AppCompatActivity {
         ArrayList<String> newWrongAnswers = results.getResultsIncorrect(i);
         question.setText(newQuestion);
 
-        if (i <= 9) {
+        if (i < 9) {
             Random r = new Random();
             int r1 = r.nextInt(4);
             int r2 = r.nextInt(4);
