@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private String generalURL;
     public Results list;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         scienceURL = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple";
         historyURL = "https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple";
         generalURL = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple";
+
     }
 
     public void setVideoGamesURL(View view) {
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void getAPIData(View view) {
         findViewById(R.id.startButton);
+
+
 
         Intent intent = new Intent(this, QuestionsScreen.class);
         intent.putExtra("category", category);
