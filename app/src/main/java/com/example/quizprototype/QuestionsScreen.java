@@ -35,7 +35,7 @@ public class QuestionsScreen extends AppCompatActivity {
         quizThread.start();
 
         try {
-            Thread.sleep(400);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
