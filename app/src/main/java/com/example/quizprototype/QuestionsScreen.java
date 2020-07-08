@@ -19,6 +19,7 @@ public class QuestionsScreen extends AppCompatActivity {
     public Results results;
     public int i;
     public int score;
+    public String scoreCategory;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class QuestionsScreen extends AppCompatActivity {
         Intent intent = getIntent();
 
         categories = intent.getStringExtra("category");
+        scoreCategory = intent.getStringExtra("scoreCategory");
         i = 0;
         score = 0;
 
@@ -180,6 +182,7 @@ public class QuestionsScreen extends AppCompatActivity {
         else{
             Intent intent = new Intent(this, ResultsScreen.class);
             intent.putExtra("score", score);
+            intent.putExtra("category", scoreCategory);
 
             startActivity(intent);
         }
