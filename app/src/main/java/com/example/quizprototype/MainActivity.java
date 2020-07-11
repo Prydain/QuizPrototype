@@ -89,11 +89,8 @@ public class MainActivity extends AppCompatActivity {
         scoreCategory = "general";
     }
 
-
     public void getAPIData(View view) {
         findViewById(R.id.startButton);
-
-
 
         Intent intent = new Intent(this, QuestionsScreen.class);
         intent.putExtra("category", category);

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,5 +36,12 @@ public class ResultsScreen extends AppCompatActivity {
             editor.putString(category, String.valueOf(finalScore));
             editor.apply();
         }
+    }
+    public void returnMainMenu(View view) {
+        findViewById(R.id.mainMenuButton);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
