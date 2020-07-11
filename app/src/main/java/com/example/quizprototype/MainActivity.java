@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+
         setContentView(R.layout.activity_main);
         videoGamesURL = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple";
         filmURL = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         videoGameButton.setText("Video Games \n" + "High Score: " + videoGameHighScore);
         filmButton.setText("Film \n" + "High Score: " + filmHighScore);
-        scienceButton.setText("Science \n" + "High Score: " + scienceHighScore);
+        scienceButton.setText("Computer Science \n" + "High Score: " + scienceHighScore);
         historyButton.setText("History \n" + "High Score: " + historyHighScore);
         generalButton.setText("General \n" + "High Score: " + generalHighScore);
 
