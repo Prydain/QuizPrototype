@@ -1,12 +1,15 @@
 package com.example.quizprototype;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ public class QuestionsScreen extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void answerButton1 (View view){
 
         results = data.getFullList();
@@ -79,7 +83,7 @@ public class QuestionsScreen extends AppCompatActivity {
         String newQuestion = results.getResultsQuestion(i);
         String newAnswer = results.getResultsCorrect(i);
         ArrayList<String> newWrongAnswers = results.getResultsIncorrect(i);
-        question.setText(newQuestion);
+        question.setText(Html.fromHtml(newQuestion, Html.FROM_HTML_MODE_LEGACY));
 
         if (i < 9) {
             Random r = new Random();
@@ -100,81 +104,81 @@ public class QuestionsScreen extends AppCompatActivity {
                 r4 = r.nextInt(4);
             }
 
-            switch (r1) {
-                case 0:
-                    button1.setText(newAnswer);
+            switch(r1) {
+                case 0 :
+                    button1.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 1:
-                    button2.setText(newAnswer);
+                case 1 :
+                    button2.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 2:
-                    button3.setText(newAnswer);
+                case 2 :
+                    button3.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 3:
-                    button4.setText(newAnswer);
+                case 3 :
+                    button4.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                     break;
-                default: // Optional
+                default : // Optional
                     // Statements
             }
 
-            switch (r2) {
-                case 0:
-                    button1.setText(newWrongAnswers.get(0));
+            switch(r2) {
+                case 0 :
+                    button1.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 1:
-                    button2.setText(newWrongAnswers.get(0));
+                case 1 :
+                    button2.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 2:
-                    button3.setText(newWrongAnswers.get(0));
+                case 2 :
+                    button3.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 3:
-                    button4.setText(newWrongAnswers.get(0));
+                case 3 :
+                    button4.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                     break;
-                default:
+                default :
             }
 
-            switch (r3) {
-                case 0:
-                    button1.setText(newWrongAnswers.get(1));
+            switch(r3) {
+                case 0 :
+                    button1.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 1:
-                    button2.setText(newWrongAnswers.get(1));
+                case 1 :
+                    button2.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 2:
-                    button3.setText(newWrongAnswers.get(1));
+                case 2 :
+                    button3.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 3:
-                    button4.setText(newWrongAnswers.get(1));
+                case 3 :
+                    button4.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                     break;
-                default:
+                default :
             }
 
-            switch (r4) {
-                case 0:
-                    button1.setText(newWrongAnswers.get(2));
+            switch(r4) {
+                case 0 :
+                    button1.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 1:
-                    button2.setText(newWrongAnswers.get(2));
+                case 1 :
+                    button2.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 2:
-                    button3.setText(newWrongAnswers.get(2));
+                case 2 :
+                    button3.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                     break;
 
-                case 3:
-                    button4.setText(newWrongAnswers.get(2));
+                case 3 :
+                    button4.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                     break;
-                default:
+                default :
             }
 
         }

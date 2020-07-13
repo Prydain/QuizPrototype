@@ -1,9 +1,13 @@
 package com.example.quizprototype;
 
 import android.app.Activity;
+import android.os.Build;
+import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 
+
+import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 
@@ -46,6 +50,7 @@ public class QuizData implements Runnable {
         final Activity done = doneReference.get();
         if (done != null) {
             done.runOnUiThread(new Runnable() {
+                @RequiresApi(api = Build.VERSION_CODES.N)
                 @Override
                 public void run() {
 
@@ -58,7 +63,7 @@ public class QuizData implements Runnable {
                     String newQuestion = list.getResultsQuestion(0);
                     String newAnswer = list.getResultsCorrect(0);
                     ArrayList<String> newWrongAnswers = list.getResultsIncorrect(0);
-                    question.setText(newQuestion);
+                    question.setText(Html.fromHtml(newQuestion, Html.FROM_HTML_MODE_LEGACY));
 
                     Random r = new Random();
                     int r1 = r.nextInt(4);
@@ -80,19 +85,19 @@ public class QuizData implements Runnable {
 
                     switch(r1) {
                         case 0 :
-                            button1.setText(newAnswer);
+                            button1.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 1 :
-                            button2.setText(newAnswer);
+                            button2.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 2 :
-                            button3.setText(newAnswer);
+                            button3.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 3 :
-                            button4.setText(newAnswer);
+                            button4.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
                             break;
                         default : // Optional
                             // Statements
@@ -100,57 +105,57 @@ public class QuizData implements Runnable {
 
                     switch(r2) {
                         case 0 :
-                            button1.setText(newWrongAnswers.get(0));
+                            button1.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 1 :
-                            button2.setText(newWrongAnswers.get(0));
+                            button2.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 2 :
-                            button3.setText(newWrongAnswers.get(0));
+                            button3.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 3 :
-                            button4.setText(newWrongAnswers.get(0));
+                            button4.setText(Html.fromHtml(newWrongAnswers.get(0), Html.FROM_HTML_MODE_LEGACY));
                             break;
                         default :
                     }
 
                     switch(r3) {
                         case 0 :
-                            button1.setText(newWrongAnswers.get(1));
+                            button1.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 1 :
-                            button2.setText(newWrongAnswers.get(1));
+                            button2.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 2 :
-                            button3.setText(newWrongAnswers.get(1));
+                            button3.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 3 :
-                            button4.setText(newWrongAnswers.get(1));
+                            button4.setText(Html.fromHtml(newWrongAnswers.get(1), Html.FROM_HTML_MODE_LEGACY));
                             break;
                         default :
                     }
 
                     switch(r4) {
                         case 0 :
-                            button1.setText(newWrongAnswers.get(2));
+                            button1.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 1 :
-                            button2.setText(newWrongAnswers.get(2));
+                            button2.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 2 :
-                            button3.setText(newWrongAnswers.get(2));
+                            button3.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                             break;
 
                         case 3 :
-                            button4.setText(newWrongAnswers.get(2));
+                            button4.setText(Html.fromHtml(newWrongAnswers.get(2), Html.FROM_HTML_MODE_LEGACY));
                             break;
                         default :
                     }
