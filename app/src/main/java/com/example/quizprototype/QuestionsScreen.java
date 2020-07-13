@@ -62,7 +62,7 @@ public class QuestionsScreen extends AppCompatActivity {
 
         //displays correct toast message if correct answer is selected.
         //increments the loop and adds to score.
-        if (buttonText == results.getResultsCorrect(i)){
+        if (buttonText.compareTo(results.getResultsCorrect(i)) == 0){
             toasty = new displayToast(this, messageCorrect);
 
             Thread displayToast = new Thread(toasty);
@@ -115,18 +115,22 @@ public class QuestionsScreen extends AppCompatActivity {
             switch(r1) {
                 case 0 :
                     button1.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
+                    //button1.setText(newAnswer);
                     break;
 
                 case 1 :
                     button2.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
+                    //button2.setText(newAnswer);
                     break;
 
                 case 2 :
                     button3.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
+                    //button3.setText(newAnswer);
                     break;
 
                 case 3 :
                     button4.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
+                    //button4.setText(newAnswer);
                     break;
                 default : // Optional
                     // Statements
