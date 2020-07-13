@@ -21,6 +21,7 @@ public class QuizData implements Runnable {
     private String category;
     public Results list;
 
+    //constructor for the API class
     public QuizData(Activity done, String category) {
         this.doneReference = new WeakReference<Activity>(done);
         this.category = category;
@@ -30,6 +31,7 @@ public class QuizData implements Runnable {
         String TAG = "send";
         Log.d(TAG, "Getting API data");
 
+        //contacts server for api call using category url.
         HTTPHelper http = new HTTPHelper();
         String url =
                 http.readHTTP(
@@ -40,6 +42,7 @@ public class QuizData implements Runnable {
         return list;
     }
 
+    //returns a result class from api call
     public Results getFullList() {
         return list;
     }
@@ -48,6 +51,7 @@ public class QuizData implements Runnable {
         final Results newList = getHTTP();
 
         final Activity done = doneReference.get();
+        //updates the ui after api call with first question and answers.
         if (done != null) {
             done.runOnUiThread(new Runnable() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -65,6 +69,7 @@ public class QuizData implements Runnable {
                     ArrayList<String> newWrongAnswers = list.getResultsIncorrect(0);
                     question.setText(Html.fromHtml(newQuestion, Html.FROM_HTML_MODE_LEGACY));
 
+                    //assigns a random variable.
                     Random r = new Random();
                     int r1 = r.nextInt(4);
                     int r2 = r.nextInt(4);
@@ -83,6 +88,7 @@ public class QuizData implements Runnable {
                         r4 = r.nextInt(4);
                     }
 
+                    //uses random variables to display on buttons.
                     switch(r1) {
                         case 0 :
                             button1.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));

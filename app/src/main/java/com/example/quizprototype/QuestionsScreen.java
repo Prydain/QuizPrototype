@@ -26,7 +26,7 @@ public class QuestionsScreen extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //starts the question screen activity and retrieves variables.
         Intent intent = getIntent();
 
         categories = intent.getStringExtra("category");
@@ -34,11 +34,13 @@ public class QuestionsScreen extends AppCompatActivity {
         i = 0;
         score = 0;
 
+        //begins API call
         data = new QuizData(this, categories);
 
         Thread quizThread = new Thread(data);
         quizThread.start();
 
+        //pauses the display activity so the API call can finish.
         try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
@@ -58,6 +60,8 @@ public class QuestionsScreen extends AppCompatActivity {
         String messageCorrect = "Correct!";
         String messageIncorrect = "Incorrect!";
 
+        //displays correct toast message if correct answer is selected.
+        //increments the loop and adds to score.
         if (buttonText == results.getResultsCorrect(i)){
             toasty = new displayToast(this, messageCorrect);
 
@@ -67,6 +71,7 @@ public class QuestionsScreen extends AppCompatActivity {
             i += 1;
         }
 
+        //displays incorrect toast and doesn't add to score. increments loop.
         else {
             toasty = new displayToast(this, messageIncorrect);
 
@@ -85,6 +90,7 @@ public class QuestionsScreen extends AppCompatActivity {
         ArrayList<String> newWrongAnswers = results.getResultsIncorrect(i);
         question.setText(Html.fromHtml(newQuestion, Html.FROM_HTML_MODE_LEGACY));
 
+        //begins the loop that displays the different questions and answers.
         if (i < 9) {
             Random r = new Random();
             int r1 = r.nextInt(4);
@@ -92,6 +98,7 @@ public class QuestionsScreen extends AppCompatActivity {
             int r3 = r.nextInt(4);
             int r4 = r.nextInt(4);
 
+            //assigns random variables for each button.
             while (r2 == r1) {
                 r2 = r.nextInt(4);
             }
@@ -104,6 +111,7 @@ public class QuestionsScreen extends AppCompatActivity {
                 r4 = r.nextInt(4);
             }
 
+            //switch statements display data using the random number to randomize their position.
             switch(r1) {
                 case 0 :
                     button1.setText(Html.fromHtml(newAnswer, Html.FROM_HTML_MODE_LEGACY));
@@ -183,6 +191,7 @@ public class QuestionsScreen extends AppCompatActivity {
 
         }
 
+        //when 10 questions have been displayed, moves on to the results.
         else{
             Intent intent = new Intent(this, ResultsScreen.class);
             intent.putExtra("score", score);

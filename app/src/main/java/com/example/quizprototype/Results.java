@@ -11,6 +11,7 @@ public class Results {
         this.results = results;
     }
 
+    //getters to access the API data. 
     public String getResultsQuestion(int i) {
         return results.get(i).getQuestion();
     }

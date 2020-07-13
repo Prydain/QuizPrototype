@@ -11,11 +11,13 @@ public class displayToast implements Runnable {
 
     private String message;
 
+    //constructor for toast
     public displayToast(Activity done, String message) {
         this.doneReference = new WeakReference<Activity>(done);
         this.message = message;
     }
 
+    //takes in the toast message and displays the toast
     public void run() {
         final Activity done = doneReference.get();
         if (done != null) {

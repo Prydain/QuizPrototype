@@ -16,6 +16,7 @@ public class ResultsScreen extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //creates results screen with score
         setContentView(R.layout.results);
         Intent intent = getIntent();
         finalScore = intent.getIntExtra("score", 0);
@@ -25,7 +26,7 @@ public class ResultsScreen extends AppCompatActivity {
         TextView scoreField = findViewById(R.id.textView2);
         scoreField.setText(String.valueOf(finalScore));
 
-
+        //saves the score only if it is a high score.
         SharedPreferences savedScore =
                 getApplicationContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
 
@@ -37,6 +38,8 @@ public class ResultsScreen extends AppCompatActivity {
             editor.apply();
         }
     }
+
+    //button press returns to category select screen to start over.
     public void returnMainMenu(View view) {
         findViewById(R.id.mainMenuButton);
 
