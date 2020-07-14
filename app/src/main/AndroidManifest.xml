@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/quiz_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <service android:name=".MusicService"
+            android:enabled="true"/>
+
         <activity android:name=".QuestionsScreen"></activity>
         <activity android:name=".ResultsScreen"></activity>
         <activity android:name=".MainActivity"></activity>
