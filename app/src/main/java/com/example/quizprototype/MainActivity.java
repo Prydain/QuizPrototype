@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
@@ -99,28 +102,80 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void buttonChanger(String buttonName) {
+        if (buttonName.compareTo("videoGames") == 0) {
+            findViewById(R.id.videoGames).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_pressed));
+            findViewById(R.id.filmButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.scienceButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.historyButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.generalButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+        }
+
+        else if (buttonName.compareTo("filmButton") == 0) {
+            findViewById(R.id.videoGames).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.filmButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_pressed));
+            findViewById(R.id.scienceButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.historyButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.generalButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+        }
+
+        else if (buttonName.compareTo("scienceButton") == 0) {
+            findViewById(R.id.videoGames).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.filmButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.scienceButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_pressed));
+            findViewById(R.id.historyButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.generalButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+        }
+
+        else if (buttonName.compareTo("historyButton") == 0) {
+            findViewById(R.id.videoGames).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.filmButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.scienceButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.historyButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_pressed));
+            findViewById(R.id.generalButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+        }
+
+        else {
+            findViewById(R.id.videoGames).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.filmButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.scienceButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.historyButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_rounded));
+            findViewById(R.id.generalButton).setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_pressed));
+        }
+    }
+
     //each button sets the url for api call and preps the category for later score saving.
     public void setVideoGamesURL(View view) {
+        String buttonName = "videoGames";
+        buttonChanger(buttonName);
         category = videoGamesURL;
         scoreCategory = "videoGames";
     }
 
     public void setFilmURL(View view) {
+        String buttonName = "filmButton";
+        buttonChanger(buttonName);
         category = filmURL;
         scoreCategory = "film";
     }
 
     public void setScienceURL(View view) {
+        String buttonName = "scienceButton";
+        buttonChanger(buttonName);
         category = scienceURL;
         scoreCategory = "science";
     }
 
     public void setHistoryURL(View view) {
+        String buttonName = "historyButton";
+        buttonChanger(buttonName);
         category = historyURL;
         scoreCategory = "history";
     }
 
     public void setGeneralURL(View view) {
+        String buttonName = "generalButton";
+        buttonChanger(buttonName);
         category = generalURL;
         scoreCategory = "general";
     }
