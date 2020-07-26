@@ -16,15 +16,16 @@
         <service android:name=".MusicService"
             android:enabled="true"/>
 
-        <activity android:name=".QuestionsScreen"></activity>
-        <activity android:name=".ResultsScreen"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Launch">
+        <activity android:name=".QuestionsScreen" android:screenOrientation="portrait"></activity>
+        <activity android:name=".ResultsScreen" android:screenOrientation="portrait"></activity>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Launch" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
 
